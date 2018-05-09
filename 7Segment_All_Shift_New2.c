@@ -13,13 +13,13 @@ int main(void) {
 	DDRD |= 0x0E;   // PORT D의 PD3,PD2,PD1을 출력으로 지정
 	DDRF = 0xFF;	// PORTF를 출력으로 지정
 	
-	PORTA = 0xFF;
+	PORTF = 0x00;
 	
 	unsigned char o_var, n_var;	
 	unsigned int i;
 		
 	while (1) {
-		o_var = 0b11110111;
+		o_var = 0xF7;  // 0b11110111;
 		
 		for(i=0; i<3; i++) {
 			PORTD = o_var;

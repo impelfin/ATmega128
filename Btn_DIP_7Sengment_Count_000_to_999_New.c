@@ -11,8 +11,7 @@
 
 typedef unsigned char u_char;
 
-u_char table1[10] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
-u_char table2[10] = {0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x02, 0x78, 0x00, 0x10};
+u_char table[10] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
 u_char N100 = 0, N10 = 0, N1 = 0;
 u_char pos = 0;		// 0 : 1자리, 1 : 10자리, 2 : 100자리
 
@@ -67,39 +66,39 @@ void dip1_changed() {
 void Seg3_out() {
 	PORTD = 0xFC;		// 0b11111101;	// PORTD1	// Q1 Tr on
 	if(pos == 0) {
-		PORTF = table1[N100];
+		PORTF = table[N100];
 		_delay_ms(10);
 	
 		PORTD = 0xFA;		// 0b11111011;	// PORTD2	// Q2 Tr on
-		PORTF = table1[N10];
+		PORTF = table[N10];
 		_delay_ms(10);
 	
 		PORTD = 0xF7;		// 0b11110111;	// PORTD3	// Q3 Tr on
-		PORTF = table2[N1];
+		PORTF = table[N1] ^ 0x80;
 		_delay_ms(10);
 		PORTA = 0xFF;
 	} else if(pos == 1) {
-		PORTF = table1[N100];
+		PORTF = table[N100];
 		_delay_ms(10);
 		
 		PORTD = 0xFA;		// 0b11111011;	// PORTD2	// Q2 Tr on
-		PORTF = table2[N10];
+		PORTF = table[N10] ^ 0x80;
 		_delay_ms(10);
 		
 		PORTD = 0xF7;		// 0b11110111;	// PORTD3	// Q3 Tr on
-		PORTF = table1[N1];
+		PORTF = table[N1];
 		_delay_ms(10);
 		PORTA = 0xFF;
 	} else {
-		PORTF = table2[N100];
+		PORTF = table[N100];
 		_delay_ms(10);
 		
 		PORTD = 0xFA;		// 0b11111011;	// PORTD2	// Q2 Tr on
-		PORTF = table1[N10];
+		PORTF = table[N10] ^ 0x80;
 		_delay_ms(10);
 		
 		PORTD = 0xF7;		// 0b11110111;	// PORTD3	// Q3 Tr on
-		PORTF = table1[N1];
+		PORTF = table[N1];
 		_delay_ms(10);
 		PORTA = 0xFF;
 	}
