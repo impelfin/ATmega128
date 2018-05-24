@@ -90,11 +90,11 @@ void Seg3_out() {
 		_delay_ms(10);
 		PORTA = 0xFF;
 	} else {
-		PORTF = table[N100];
+		PORTF = table[N100] ^ 0x80;
 		_delay_ms(10);
 		
 		PORTD = 0xFA;		// 0b11111011;	// PORTD2	// Q2 Tr on
-		PORTF = table[N10] ^ 0x80;
+		PORTF = table[N10];
 		_delay_ms(10);
 		
 		PORTD = 0xF7;		// 0b11110111;	// PORTD3	// Q3 Tr on
