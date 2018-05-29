@@ -31,10 +31,10 @@ int main() {
 		sprintf(str1, "Port B Reg : %d", key);
 		sprintf(str2, "Btn %d Pressed!!", btn_no);
 			
-		LCD_initialize();	// LCD 초기화 함수 call
-		LCD_position(0,0);	// LCD에 표시할 문자 위치 지정
-		LCD_STR(str1);		// LCD에 표시할 문자열 출력
-		LCD_position(0,1);	// LCD에 표시할 문자 위치 지정
-		LCD_STR(str2);		// LCD에 표시할 문자열 출력
+		LCD_Initialize();	// LCD 초기화 함수 call
+		LCD_Position(0,0);	// LCD에 표시할 문자 위치 지정
+		LCD_Str(str1);		// LCD에 표시할 문자열 출력
+		LCD_Position(0,1);	// LCD에 표시할 문자 위치 지정
+		LCD_Str(str2);		// LCD에 표시할 문자열 출력
 	}
 }
