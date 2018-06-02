@@ -24,14 +24,14 @@ void initrand()
 }
 
 int main(void) {
+	initrand();
+	
 	DDRA = 0xFF;		
 	DDRC = 0xFF;	// PORTC는 모두 출력
 	DDRD = 0xEE;   // PORTD의 PD0을 입력으로 지정
 	
 	PORTA = 0xFF;
 	PORTC = 0xFF;
-
-	initrand();
 	
 	unsigned char o_sw, n_sw, led, str1[16], str2[16];
 	unsigned int i, num = 0;
@@ -40,25 +40,17 @@ int main(void) {
 	
 	while(1) {
 		n_sw = PIND & (1<<PIND0);
-		led = 0xFE;
+		led = 0xFF;
 
 		if(o_sw != 0 && n_sw == 0) {
 			num = (random() % 6) + 1;
-			for(i = 0;i < num; i++) {
-				PORTA = led;
-				led = led << 1;
-			}
+			PORTA = led << num;
 		}
 		o_sw = n_sw;		
 		
 		sprintf(str1, "Dice Game!!");
 		sprintf(str2, "Your Number = %d", num);
-		
-		LCD_Initialize();	// LCD 초기화 함수 call
-		LCD_Position(0,0);	// LCD에 표시할 문자 위치 지정
-		LCD_Str(str1);		// LCD에 표시할 문자열 출력
-		LCD_Position(0,1);	// LCD에 표시할 문자 위치 지정
-		LCD_Str(str2);		// LCD에 표시할 문자열 출력
+		LCD_Display(str1, str2);
 	}	
 }
 

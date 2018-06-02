@@ -24,6 +24,8 @@ void initrand()
 }
 
 int main(void) {
+	initrand();
+
 	DDRA = 0xFF;		
 	DDRB = 0x00;
 	DDRC = 0xFF;	// PORTC는 모두 출력
@@ -32,8 +34,6 @@ int main(void) {
 	PORTA = 0xFF;
 	PORTC = 0xFF;
 
-	initrand();
-	
 	unsigned char o_sw, n_sw, led, str1[16], str2[16];
 	unsigned int i, num = 0;
 	
@@ -41,14 +41,11 @@ int main(void) {
 	
 	while(1) {
 		n_sw = PINB & (1<<PINB0);
-		led = 0xFE;
+		led = 0xFF;
 
 		if(o_sw != 0 && n_sw == 0) {
 			num = (random() % 6) + 1;
-			for(i = 0;i < num; i++) {
-				PORTA = led;
-				led = led << 1;
-			}
+			PORTA = led << num;
 		}
 		o_sw = n_sw;		
 		

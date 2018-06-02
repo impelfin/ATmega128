@@ -1,5 +1,5 @@
 /*
- * LCD_Ex_Btn_Pressed.c
+ * LCD_Example.c
  *
  * Created: 2018-04-08 ¿ÀÈÄ 6:54:23
  * Author : Moon
