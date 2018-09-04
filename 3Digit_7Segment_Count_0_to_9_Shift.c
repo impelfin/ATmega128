@@ -1,5 +1,5 @@
 /*
- * 3Digit_7Sengment_Count_0_to_9_Shift.c
+ * 3Digit_7Segment_Count_0_to_9_Shift.c
  *
  * Created: 2018-04-16 오전 1:38:30
  * Author : MACBOOK
