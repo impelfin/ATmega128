@@ -1,7 +1,7 @@
 /*
  * 3Digit_7Sengment_Count_000_to_999_for.c
  *
- * Created: 2018-04-16 ¿ÀÀü 1:38:30
+ * Created: 2018-04-16 ì˜¤ì „ 1:38:30
  * Author : MACBOOK
  */ 
 
@@ -15,8 +15,8 @@ unsigned char i, j, d_val;
 void Seg3_out(int);
 
 int main(void) {
-	DDRD |= 0x0E;   // PORT DÀÇ PD3,PD2,PD1À» Ãâ·ÂÀ¸·Î ÁöÁ¤
-	DDRF = 0xFF;	// PORTF¸¦ Ãâ·ÂÀ¸·Î ÁöÁ¤
+	DDRD |= 0x0E;   // PORT Dì˜ PD3,PD2,PD1ì„ ì¶œë ¥ìœ¼ë¡œ ì§€ì •
+	DDRF = 0xFF;	// PORTFë¥¼ ì¶œë ¥ìœ¼ë¡œ ì§€ì •
 	
 	PORTF = 0xFF;
 	
