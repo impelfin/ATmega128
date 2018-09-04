@@ -1,7 +1,7 @@
 /*
  * 3Digit_7Sengment_Count_0_to_9_Shift.c
  *
- * Created: 2018-04-16 ¿ÀÀü 1:38:30
+ * Created: 2018-04-16 ì˜¤ì „ 1:38:30
  * Author : MACBOOK
  */ 
 
@@ -13,8 +13,8 @@ unsigned char table[10] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80,
 unsigned char i, j, d_val; 
 
 int main(void) {
-	DDRD |= 0x0E;   // PORT DÀÇ PD3,PD2,PD1À» Ãâ·ÂÀ¸·Î ÁöÁ¤
-	DDRF = 0xFF;	// PORTF¸¦ Ãâ·ÂÀ¸·Î ÁöÁ¤
+	DDRD |= 0x0E;   // PORT Dì˜ PD3,PD2,PD1ì„ ì¶œë ¥ìœ¼ë¡œ ì§€ì •
+	DDRF = 0xFF;	// PORTFë¥¼ ì¶œë ¥ìœ¼ë¡œ ì§€ì •
 	
     while (1) {
 		d_val = 0xF7;		// 0b11110111;	// PORTD3	// Q3 Tr on
