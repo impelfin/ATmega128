@@ -1,7 +1,7 @@
 /*
- * Btn_DIP_7Sengment_Count_000_to_999_New.c
+ * Btn_DIP_7Segment_Count_000_to_999_New.c
  *
- * Created: 2018-04-16 ¿ÀÀü 1:38:30
+ * Created: 2018-04-16 ì˜¤ì „ 1:38:30
  * Author : MACBOOK
  */ 
 
@@ -13,7 +13,7 @@ typedef unsigned char u_char;
 
 u_char table[10] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
 u_char N100 = 0, N10 = 0, N1 = 0;
-u_char pos = 0;		// 0 : 1ÀÚ¸®, 1 : 10ÀÚ¸®, 2 : 100ÀÚ¸®
+u_char pos = 0;		// 0 : 1ìë¦¬, 1 : 10ìë¦¬, 2 : 100ìë¦¬
 
 void Seg3_out(void);
 void tact_pressed(void);
@@ -21,9 +21,9 @@ void dip1_changed(void);
 
 int main(void) {
 	DDRA = 0xFF;
-	DDRD |= 0x0E;   // PORT DÀÇ PD3,PD2,PD1À» Ãâ·Â, PD0À» ÀÔ·ÂÀ¸·Î ÁöÁ¤
-	DDRE |= 0x00;	// PORT EÀÇ PE3, PE2¸¦ ÀÔ·ÂÀ¸·Î ÁöÁ¤ 
-	DDRF = 0xFF;	// PORTF¸¦ Ãâ·ÂÀ¸·Î ÁöÁ¤
+	DDRD |= 0x0E;   // PORT Dì˜ PD3,PD2,PD1ì„ ì¶œë ¥, PD0ì„ ì…ë ¥ìœ¼ë¡œ ì§€ì •
+	DDRE |= 0x00;	// PORT Eì˜ PE3, PE2ë¥¼ ì…ë ¥ìœ¼ë¡œ ì§€ì • 
+	DDRF = 0xFF;	// PORTFë¥¼ ì¶œë ¥ìœ¼ë¡œ ì§€ì •
 	
 	PORTA = 0xFF;
 	PORTD = 0xF7;		/* Q3 Tr on */
